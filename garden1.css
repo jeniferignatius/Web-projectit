@@ -1,0 +1,334 @@
+body{ color:darkgreen; }
+*{box-sizing: border-box;margin: 0;padding: 0;}
+header{ height: 250px;width: 100%; background: url(garden1.jpg); background-size: cover;margin-bottom: 50px; position: relative;z-index: 3;}
+header a.logo{position: absolute;display: block;width: 154px;height: 57px;
+                        background-size:contain;z-index: 1; background-image: url(gardenlogo.png);background-repeat: no-repeat;top: 15px; left:10px ;}
+.header a{ color:white;text-decoration: none;}
+a{text-decoration: none;color:darkgreen;}                        
+header a.logo span{display: none;}
+nav {background-color: lightgreen;position: relative;padding: 20px 60px 0px 120px;justify-content: space-between;display: flex;}
+
+@media screen and (max-width:750px){
+    header a.logo{ width:120px;height: 44px;}
+
+    
+  
+}
+
+.dropbtn {
+  
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  display: block;
+  float: left;
+  
+
+}
+.dropdown {
+  position: relative;
+  
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top:100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 6px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:lightgreen}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+.dropbtn {
+ 
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  
+}
+nav .mainmenu li{ list-style: none; margin-left: 0px;padding: 5px 17px; }
+
+nav ul::after { content: '';display: block;clear: both;}
+
+
+
+nav ul li a:hover,.active{background-color:darkgreen ;}
+nav .mainmenu li a{display: inline-block;padding: 3px;text-decoration: none;}
+.submenu li {
+  float: none; 
+  border-top: 1px solid #6b727c;
+  border-bottom: 1px solid #575f6a;
+  
+}
+                                  
+nav .mainmenu .submenu{position: absolute;top: 100%;background-color: lightgreen;margin-left: 0px;border-radius: 0px; }
+
+
+nav ul ul li a:hover,.header .menu-btn:hover{background-color: darkgreen;}
+
+.main .content{text-align: center;clear: both;}
+
+
+.fa-facebook:hover{color: darkgreen;}
+.fa-instagram:hover{color: darkgreen;}
+.fa-twitter:hover{color: darkgreen;}
+.fa-github:hover{color: darkgreen;}
+
+nav .mainmenu .icon{
+   padding: auto;
+   float: right;
+   margin-right:20px ;
+
+   }
+   nav .login{ 
+    
+     padding: 4px ;
+     float: right;
+     margin-right:0px ;
+     background-color: darkgreen;
+    }
+    
+
+
+
+
+/* menu icon */
+
+.header .mainmenu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  position: relative;
+  display: block;
+  float: left;
+  margin-top: 20px;
+  padding: auto;
+  
+  
+}
+
+.header .menu-icon {
+    cursor: pointer;
+    display: block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    margin-top: 10px;
+  }
+  
+  .header nav .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header nav .menu-icon .navicon:before,
+    .menu-icon .navicon:after {
+    background: darkgreen;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .mainmenu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+
+    header{ 
+      margin-bottom: 100px;
+    }
+    .header li {
+      float: left;
+    }
+    .header ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: visible;
+      
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .mainmenu {
+      clear: none;
+      float: right;
+      max-height: none;
+      
+    }
+    .header .menu-icon {
+      display: none;
+    }
+
+    nav .mainmenu .icon{
+      font-size: 2rem;
+      cursor: pointer;
+      margin-right:0px ;
+      
+    
+       }
+       nav .login{
+        font-size: 1rem;
+        cursor: pointer;
+        margin-right:200px ;
+        float: right;
+      
+         }
+
+      .form{
+        align-items: center;
+        margin: 10vh 40vh;
+        
+      }
+      .pagination{
+        margin-left: 100px;
+        
+      }
+   
+      .footer{
+        
+        margin: 0;
+        text-align: center;
+        clear: both;
+        width: auto;
+        
+      }
+      
+  }
+  
+  
+  /* news*/
+  
+  .right {
+    background-color:lightgreen;
+    color: darkgreen;
+    float:left;
+    width:50%;
+    padding:50px;
+    margin-top:0px;
+    margin-left: 10px;
+    text-align:center;
+  }
+  .right1 {
+    background-color:lightgreen;
+    color: darkgreen;
+    float:right;
+    width:50%;
+    padding:50px;
+    margin-top:0px;
+    margin-left: 10px;
+    text-align:center;
+  }
+  .right2 {
+    background-color:lightgreen;
+    color: darkgreen;
+    float:left;
+    width:50%;
+    padding:50px;
+    margin-top:0px;
+    margin-left: 10px;
+    text-align:center;
+  }
+  .menu{
+      margin: 0;
+  }
+
+   /* news*/
+
+   .footer{
+    box-sizing: border-box;
+    color: darkgreen;
+    padding: 10px;
+    margin-top: 100px;
+    text-align: center;
+    clear: both;
+    width: auto;
+    
+  }
+  

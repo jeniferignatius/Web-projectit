@@ -51,8 +51,6 @@
                     <button class="login"><a href="login.php">Login</a></button>
             </ul>
         
-            <div class="pagination"><?php include "pagination.php"; ?></div>
-        
         </nav>
     </header>
     
