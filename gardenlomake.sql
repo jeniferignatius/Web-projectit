@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2021 at 10:06 AM
+-- Generation Time: Mar 08, 2021 at 09:21 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -24,13 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `galleryupload`
 --
 
-CREATE TABLE `admin` (
-  `id` int(7) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `passcode` varchar(30) NOT NULL
+CREATE TABLE `galleryupload` (
+  `id` int(11) NOT NULL,
+  `title` longtext NOT NULL,
+  `description` longtext NOT NULL,
+  `imgfilename` longtext NOT NULL,
+  `orderimg` longtext NOT NULL,
+  `price` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -64,40 +67,11 @@ CREATE TABLE `lomake` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
---
-
-CREATE TABLE `register` (
-  `ID` int(10) NOT NULL,
-  `First_Name` varchar(100) NOT NULL,
-  `Last_Name` varchar(100) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Password` int(100) NOT NULL,
-  `File` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tuotekategoria`
 --
 
 CREATE TABLE `tuotekategoria` (
   `id` int(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tuotteet`
---
-
-CREATE TABLE `tuotteet` (
-  `id` int(30) NOT NULL,
-  `nimi` varchar(100) NOT NULL,
-  `kuvaus` varchar(100) NOT NULL,
-  `hinta` decimal(65,0) NOT NULL,
-  `kuva` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -123,12 +97,6 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -148,20 +116,8 @@ ALTER TABLE `tuotekategoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tuotteet`
---
-ALTER TABLE `tuotteet`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -174,12 +130,6 @@ ALTER TABLE `login`
 --
 ALTER TABLE `lomake`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tuotteet`
---
-ALTER TABLE `tuotteet`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -152,7 +152,7 @@
     <div class="row1" style="color: darkgreen;text-align: center;margin-left: 10px;">
         <div class="column" >
             <?php
-            include_once 'include/include.php';
+            include_once 'include/includelomake.php';
 
             // create connection
         if (isset($_GET['pageno'])) {

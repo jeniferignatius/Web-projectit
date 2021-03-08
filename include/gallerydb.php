@@ -2,7 +2,7 @@
 $server = "localhost";
 $user = "root"; 
 $password = "";
-$database = "galleryupload";
+$database = "gardenlomake";
 
 // create connection
 $connection = mysqli_connect($server, $user, $password, $database);
