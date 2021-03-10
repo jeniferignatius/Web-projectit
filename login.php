@@ -73,7 +73,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
+                            $_SESSION["username"] = $username;
+                            
+                             //remember me
+                             if(!empty($_POST["remember"]))
+                             {
+                                setcookie ("username", $_POST["username"], time() + (10 * 365 * 24 * 60 * 60));
+                                setcookie ("password", $_POST["password"], time() + (10 * 365 * 24 * 60 * 60));
+                             }
+                         else
+                          {
+                              if(isset($_COOKIE["username"]))
+                                 {
+                                      setcookie ("username", "");
+                                 }
+                               if(isset($_COOKIE["password"]))
+                                 {
+                                      setcookie ("password", "");
+                                 }
+                         }
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
@@ -117,6 +135,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 
 <body>
+
     
     <div class="wrapper">
         <h2>Login</h2>
@@ -124,14 +143,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                <input type="text" name="username" class="form-control" value="<?php echo $username; if(isset($_COOKIE["username"])) {echo $_COOKIE["username"];}?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" value="<?php if(isset($_COOKIE["password"])) {echo $_COOKIE["password"];} ?>">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
+            <input type="checkbox" name="remember" <?php if(isset($_COOKIE["username"])) { ?> checked <?php }?>/>
+            <label>Remember me</label><br/><br/>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
